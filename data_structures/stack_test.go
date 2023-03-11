@@ -20,9 +20,23 @@ func TestStackPop(t *testing.T) {
 	s := data_structures.Stack[int]{}
 	s.Push(3)
 	s.Push(4)
-	resp := s.Pop()
+	resp, err := s.Pop()
+
+	if err != nil {
+		t.Errorf("Should not error when Poping a non-empty stack")
+	}
+
 	if resp != 4 {
 		t.Errorf("Expected Pop to return %v but got %v", 4, resp)
+	}
+}
+
+func TestStackPopEmpty(t *testing.T) {
+	s := data_structures.Stack[int]{}
+	_, err := s.Pop()
+
+	if err == nil {
+		t.Errorf("Should error when Poping a empty Stack")
 	}
 }
 
