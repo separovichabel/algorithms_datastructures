@@ -52,8 +52,4 @@ func TestQueueDenqueueEmpty(t *testing.T) {
 	if dequeued, err = q.Dequeue(); err == nil {
 		t.Errorf("Empty Dequeued shoul error. But got %v, %v", dequeued, err)
 	}
-
-	if err.Error() == "" {
-		t.Errorf("Empty Dequeued error message should not be empty!")
-	}
 }

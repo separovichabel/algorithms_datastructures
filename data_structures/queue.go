@@ -1,5 +1,7 @@
 package data_structures
 
+import "errors"
+
 type Queue[T any] struct {
 	list []T
 }
@@ -19,7 +21,7 @@ func (q *Queue[T]) Len() int {
 
 func (q *Queue[T]) Dequeue() (firstElm T, err error) {
 	if q.Len() == 0 {
-		return firstElm, ErrDequeueEmptyQueue(true)
+		return firstElm, ErrDequeueEmptyQueue
 	}
 
 	firstElm = q.list[0]
@@ -28,8 +30,4 @@ func (q *Queue[T]) Dequeue() (firstElm T, err error) {
 	return firstElm, nil
 }
 
-type ErrDequeueEmptyQueue bool
-
-func (e ErrDequeueEmptyQueue) Error() string {
-	return "Empty Queue can not be Dequeued"
-}
+var ErrDequeueEmptyQueue error = errors.New("Empty Queue can not be Dequeued")
