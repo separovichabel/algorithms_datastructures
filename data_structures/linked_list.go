@@ -14,10 +14,6 @@ func (ln *ListHead[T]) Insert(value T) {
 }
 
 func (ln *ListHead[T]) Len() int {
-	if ln.Node == nil {
-		return 0
-	}
-
 	count := 1
 	cur := ln.Node
 	for cur.Next != nil {
@@ -29,10 +25,6 @@ func (ln *ListHead[T]) Len() int {
 }
 
 func (ln *ListHead[T]) ToList() []T {
-	if ln.Node == nil {
-		return []T{}
-	}
-
 	list := []T{}
 	cur := ln.Node
 	for cur.Next != nil {
