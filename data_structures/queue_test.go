@@ -25,24 +25,35 @@ func TestQueueDenqueue(t *testing.T) {
 	q := data_structures.Queue[int]{}
 
 	var dequeued int
-	var ok bool
-	if dequeued, ok = q.Dequeue(); ok {
-		t.Errorf("Empty Dequeued shoul not ok. But got %v, %v", dequeued, ok)
-	}
+	var err error
 
 	q.Enqueue(1)
 	q.Enqueue(10)
 
-	if dequeued, ok = q.Dequeue(); !ok {
-		t.Errorf("Non-empty Dequeued shoul ok. But got %v, %v", dequeued, ok)
+	if dequeued, err = q.Dequeue(); err != nil {
+		t.Errorf("Non-empty Dequeued shoul not error. But got \"%v\"", err.Error())
 	}
 
 	if dequeued != 1 {
 		t.Errorf("First Dequeued value shoul be 1 but got %v", dequeued)
 	}
 
-	dequeued, ok = q.Dequeue()
+	dequeued, err = q.Dequeue()
 	if dequeued != 10 {
 		t.Errorf("Second Len should return 10 but got %v", dequeued)
+	}
+}
+
+func TestQueueDenqueueEmpty(t *testing.T) {
+	q := data_structures.Queue[int]{}
+
+	var dequeued int
+	var err error
+	if dequeued, err = q.Dequeue(); err == nil {
+		t.Errorf("Empty Dequeued shoul error. But got %v, %v", dequeued, err)
+	}
+
+	if err.Error() == "" {
+		t.Errorf("Empty Dequeued error message should not be empty!")
 	}
 }
