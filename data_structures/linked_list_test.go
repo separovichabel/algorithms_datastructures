@@ -7,33 +7,13 @@ import (
 )
 
 func TestListNodeInsert(t *testing.T) {
-	head := data_structures.ListHead[int]{nil}
+	head := data_structures.List[int]{nil}
 
 	head.Insert(0)
 
 	if head.Node.Value != 0 {
 		t.Errorf("Value should be 0 but got %v", head.Node.Value)
 	}
-}
-
-type lenCase[T comparable] struct {
-	arr      []T
-	expected int
-}
-
-var lenCases []lenCase[int] = []lenCase[int]{
-	{
-		[]int{1, 2, 3, 4},
-		4,
-	},
-	{
-		[]int{1},
-		1,
-	},
-	{
-		[]int{0, 1, 2},
-		3,
-	},
 }
 
 func TestListNodeLen(t *testing.T) {
@@ -45,26 +25,6 @@ func TestListNodeLen(t *testing.T) {
 			t.Errorf("Value should be %v but got %v", tcase.expected, resp)
 		}
 	}
-}
-
-type toListCase[T comparable] struct {
-	arr      []T
-	expected []T
-}
-
-var toListCases []toListCase[int] = []toListCase[int]{
-	{
-		[]int{1, 2, 3, 4},
-		[]int{4, 3, 2, 1},
-	},
-	{
-		[]int{1},
-		[]int{1},
-	},
-	{
-		[]int{0, 1, 2},
-		[]int{2, 1, 0},
-	},
 }
 
 func TestListNodeToList(t *testing.T) {
@@ -80,9 +40,49 @@ func TestListNodeToList(t *testing.T) {
 	}
 }
 
-func produceData[T comparable](data []T) data_structures.ListHead[T] {
+type lenCase struct {
+	arr      []int
+	expected int
+}
 
-	head := data_structures.ListHead[T]{Node: nil}
+var lenCases []lenCase = []lenCase{
+	{
+		[]int{1, 2, 3, 4},
+		4,
+	},
+	{
+		[]int{1},
+		1,
+	},
+	{
+		[]int{0, 1, 2},
+		3,
+	},
+}
+
+type toListCase struct {
+	arr      []int
+	expected []int
+}
+
+var toListCases []toListCase = []toListCase{
+	{
+		[]int{1, 2, 3, 4},
+		[]int{4, 3, 2, 1},
+	},
+	{
+		[]int{1},
+		[]int{1},
+	},
+	{
+		[]int{0, 1, 2},
+		[]int{2, 1, 0},
+	},
+}
+
+func produceData[T comparable](data []T) data_structures.List[T] {
+
+	head := data_structures.List[T]{Node: nil}
 
 	for _, d := range data {
 		head.Insert(d)

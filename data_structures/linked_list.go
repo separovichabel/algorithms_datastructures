@@ -1,19 +1,19 @@
 package data_structures
 
-type ListNode[T comparable] struct {
+type Node[T comparable] struct {
 	Value T
-	Next  *ListNode[T]
+	Next  *Node[T]
 }
 
-type ListHead[T comparable] struct {
-	Node *ListNode[T]
+type List[T comparable] struct {
+	Node *Node[T]
 }
 
-func (ln *ListHead[T]) Insert(value T) {
-	ln.Node = &ListNode[T]{Value: value, Next: ln.Node}
+func (ln *List[T]) Insert(value T) {
+	ln.Node = &Node[T]{Value: value, Next: ln.Node}
 }
 
-func (ln *ListHead[T]) Len() int {
+func (ln *List[T]) Len() int {
 	count := 1
 	cur := ln.Node
 	for cur.Next != nil {
@@ -24,7 +24,7 @@ func (ln *ListHead[T]) Len() int {
 	return count
 }
 
-func (ln *ListHead[T]) ToList() []T {
+func (ln *List[T]) ToList() []T {
 	list := []T{}
 	cur := ln.Node
 	for cur.Next != nil {
