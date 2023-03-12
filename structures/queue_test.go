@@ -1,13 +1,13 @@
-package data_structures_test
+package structures_test
 
 import (
 	"testing"
 
-	"github.com/separovichabel/algorithms-datastructure/data_structures"
+	"github.com/separovichabel/algorithms_datastructures/structures"
 )
 
 func TestQueueEnqueue(t *testing.T) {
-	q := data_structures.Queue[int]{}
+	q := structures.Queue[int]{}
 
 	q.Enqueue(1)
 
@@ -22,7 +22,7 @@ func TestQueueEnqueue(t *testing.T) {
 }
 
 func TestQueueDenqueue(t *testing.T) {
-	q := data_structures.Queue[int]{}
+	q := structures.Queue[int]{}
 
 	var dequeued int
 	var err error
@@ -45,7 +45,7 @@ func TestQueueDenqueue(t *testing.T) {
 }
 
 func TestQueueDenqueueEmpty(t *testing.T) {
-	q := data_structures.Queue[int]{}
+	q := structures.Queue[int]{}
 
 	var dequeued int
 	var err error

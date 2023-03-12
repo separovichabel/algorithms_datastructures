@@ -1,13 +1,13 @@
-package data_structures_test
+package structures_test
 
 import (
 	"testing"
 
-	"github.com/separovichabel/algorithms-datastructure/data_structures"
+	"github.com/separovichabel/algorithms_datastructures/structures"
 )
 
 func TestStackPush(t *testing.T) {
-	s := data_structures.Stack[int]{}
+	s := structures.Stack[int]{}
 	s.Push(1)
 	s.Push(2)
 
@@ -17,7 +17,7 @@ func TestStackPush(t *testing.T) {
 }
 
 func TestStackPop(t *testing.T) {
-	s := data_structures.Stack[int]{}
+	s := structures.Stack[int]{}
 	s.Push(3)
 	s.Push(4)
 	resp, err := s.Pop()
@@ -32,7 +32,7 @@ func TestStackPop(t *testing.T) {
 }
 
 func TestStackPopEmpty(t *testing.T) {
-	s := data_structures.Stack[int]{}
+	s := structures.Stack[int]{}
 	_, err := s.Pop()
 
 	if err == nil {
@@ -41,7 +41,7 @@ func TestStackPopEmpty(t *testing.T) {
 }
 
 func TestStackLen(t *testing.T) {
-	s := data_structures.Stack[string]{}
+	s := structures.Stack[string]{}
 	s.Push("foo")
 	s.Push("bar")
 	resp := s.Len()

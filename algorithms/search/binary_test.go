@@ -3,7 +3,7 @@ package search_test
 import (
 	"testing"
 
-	"github.com/separovichabel/algorithms-datastructure/algorithms/search"
+	"github.com/separovichabel/algorithms_datastructures/algorithms/search"
 )
 
 type Case struct {

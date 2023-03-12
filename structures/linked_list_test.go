@@ -1,13 +1,13 @@
-package data_structures_test
+package structures_test
 
 import (
 	"testing"
 
-	"github.com/separovichabel/algorithms-datastructure/data_structures"
+	"github.com/separovichabel/algorithms_datastructures/structures"
 )
 
 func TestListNodeInsert(t *testing.T) {
-	head := data_structures.List[int]{nil}
+	head := structures.List[int]{nil}
 
 	head.Insert(0)
 
@@ -80,9 +80,9 @@ var toListCases []toListCase = []toListCase{
 	},
 }
 
-func produceData[T comparable](data []T) data_structures.List[T] {
+func produceData[T comparable](data []T) structures.List[T] {
 
-	head := data_structures.List[T]{Node: nil}
+	head := structures.List[T]{Node: nil}
 
 	for _, d := range data {
 		head.Insert(d)

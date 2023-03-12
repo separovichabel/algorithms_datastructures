@@ -1,4 +1,4 @@
-package data_structures
+package structures
 
 type Node[T comparable] struct {
 	Value T

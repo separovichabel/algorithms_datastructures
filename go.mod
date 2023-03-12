@@ -1,3 +1,3 @@
-module github.com/separovichabel/algorithms-datastructure
+module github.com/separovichabel/algorithms_datastructures
 
 go 1.20
