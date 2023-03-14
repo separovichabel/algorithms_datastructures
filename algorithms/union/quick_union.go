@@ -1,19 +1,11 @@
 package union
 
 type QuickUnion struct {
-	array []int
-}
-
-func (ul *QuickUnion) Len() int {
-	return len(ul.array)
+	Parent []int // Parent of b is Parent[b]
 }
 
 func (ul *QuickUnion) Connected(a, b int) bool {
 	return ul.RootOf(a) == ul.RootOf(b)
-}
-
-func (ul *QuickUnion) ConnectedDirect(a, b int) bool {
-	return a == ul.array[b]
 }
 
 // Union connects two itens
@@ -23,13 +15,13 @@ func (ul *QuickUnion) Union(a, b int) {
 		return
 	}
 
-	ul.array[b] = ul.RootOf(a)
+	ul.Parent[b] = a
 }
 
 // RootOf finds itens root
 func (ul *QuickUnion) RootOf(iten int) int {
-	for iten != ul.array[iten] {
-		iten = ul.array[iten]
+	for iten != ul.Parent[iten] {
+		iten = ul.Parent[iten]
 	}
 
 	return iten
@@ -37,10 +29,10 @@ func (ul *QuickUnion) RootOf(iten int) int {
 
 func NewQuickUnion(len int) *QuickUnion {
 	ul := &QuickUnion{}
-	ul.array = make([]int, len)
+	ul.Parent = make([]int, len)
 
-	for i := range ul.array {
-		ul.array[i] = i
+	for i := range ul.Parent {
+		ul.Parent[i] = i
 	}
 
 	return ul

@@ -60,14 +60,14 @@ func TestNewQuickUnion_RootOf(t *testing.T) {
 }
 
 // TestNewQuickUnion_ConnectedDirect tests if a value is directly connected to another
-func TestNewQuickUnion_ConnectedDirect(t *testing.T) {
-	t.Log("ConnectedDirect()")
+func TestNewQuickUnionConnectedDirect(t *testing.T) {
+	t.Log("Direct connections")
 	t.Run("No Union", func(t *testing.T) {
 		ul := quickUnion.NewQuickUnion(1)
-		connected := ul.ConnectedDirect(0, 0)
+		parent := ul.Parent[0]
 
-		if !connected {
-			t.Errorf("Should return true but got %v", connected)
+		if parent != 0 {
+			t.Errorf("Should return true but got %v", parent)
 		}
 	})
 
@@ -75,10 +75,10 @@ func TestNewQuickUnion_ConnectedDirect(t *testing.T) {
 		ul := quickUnion.NewQuickUnion(2)
 		ul.Union(0, 1)
 
-		connected := ul.ConnectedDirect(0, 1)
+		parent := ul.Parent[1]
 
-		if !connected {
-			t.Errorf("Should return true but got %v", connected)
+		if parent != 0 {
+			t.Errorf("Should return 0 but got %v", parent)
 		}
 	})
 
@@ -88,10 +88,10 @@ func TestNewQuickUnion_ConnectedDirect(t *testing.T) {
 		ul.Union(0, 1)
 		ul.Union(1, 2)
 
-		connected := ul.ConnectedDirect(1, 2)
+		parent := ul.Parent[2]
 
-		if connected {
-			t.Errorf("Should return false but got %v", connected)
+		if parent != 1 {
+			t.Errorf("Should return 1 but got %v", parent)
 		}
 	})
 
