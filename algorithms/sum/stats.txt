@@ -1,0 +1,56 @@
+goos: linux
+goarch: amd64
+pkg: github.com/separovichabel/algorithms_datastructures/algorithms/sum
+cpu: AMD Ryzen 5 5600G with Radeon Graphics         
+BenchmarkThree100-12     	   12764	     98264 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree100-12     	   12928	     93170 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree100-12     	   12868	     93112 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree100-12     	   12802	     92759 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree100-12     	   12805	     92323 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree100-12     	   12842	     92993 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree100-12     	   12908	     93008 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree100-12     	   12948	     93110 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree100-12     	   12932	     93171 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree100-12     	   12898	     92896 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree1000-12    	      14	  80086202 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree1000-12    	      14	  80103103 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree1000-12    	      14	  80795168 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree1000-12    	      14	  79751395 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree1000-12    	      14	  80234050 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree1000-12    	      14	  80041780 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree1000-12    	      14	  83110875 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree1000-12    	      14	  80141193 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree1000-12    	      14	  80339409 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree1000-12    	      13	  79938216 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree2000-12    	       2	 634272443 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree2000-12    	       2	 639159690 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree2000-12    	       2	 636592509 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree2000-12    	       2	 694972717 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree2000-12    	       2	 644093610 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree2000-12    	       2	 644534910 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree2000-12    	       2	 659489960 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree2000-12    	       2	 654600164 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree2000-12    	       2	 634189511 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree2000-12    	       2	 635582586 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree4000-12    	       1	5092228766 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree4000-12    	       1	5057136023 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree4000-12    	       1	5103522098 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree4000-12    	       1	5058310230 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree4000-12    	       1	5083526156 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree4000-12    	       1	5123192789 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree4000-12    	       1	5355209390 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree4000-12    	       1	5099711583 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree4000-12    	       1	5201629629 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree4000-12    	       1	5144672852 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree8000-12    	       1	41167749567 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree8000-12    	       1	40720390362 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree8000-12    	       1	40072913254 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree8000-12    	       1	40353785341 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree8000-12    	       1	40570699898 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree8000-12    	       1	40681063514 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree8000-12    	       1	40912458712 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree8000-12    	       1	41638134710 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree8000-12    	       1	41849803399 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThree8000-12    	       1	41184972060 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/separovichabel/algorithms_datastructures/algorithms/sum	514.523s
