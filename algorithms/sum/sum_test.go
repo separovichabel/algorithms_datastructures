@@ -29,8 +29,12 @@ func TestThreeEightInts(t *testing.T) {
 }
 
 func benchmarkThree(len int, b *testing.B) {
-	input := rand.RandSlice(len)
+	f := func() int {
+		return rand.RandPositiveNegative(100, -100)
+	}
+	input := rand.RandSlice(len, f)
 	b.ResetTimer()
+
 	for i := 0; i < b.N; i++ {
 		sum.Three(input)
 	}
