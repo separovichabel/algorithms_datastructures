@@ -7,9 +7,9 @@ import (
 )
 
 func TestListNodeInsert(t *testing.T) {
-	head := structures.List[int]{nil}
+	head := structures.List[int]{}
 
-	head.Insert(0)
+	head.Push(0)
 
 	if head.Node.Value != 0 {
 		t.Errorf("Value should be 0 but got %v", head.Node.Value)
@@ -85,7 +85,7 @@ func produceData[T comparable](data []T) structures.List[T] {
 	head := structures.List[T]{Node: nil}
 
 	for _, d := range data {
-		head.Insert(d)
+		head.Push(d)
 	}
 
 	return head

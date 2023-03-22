@@ -9,11 +9,11 @@ type Stack[T any] struct {
 	list []T
 }
 
-// type IStack[T any] interface {
-// 	Push(i T)
-// 	Pop() (i T, err error)
-//  Len() int
-// }
+type IStack[T any] interface {
+	Push(i T)
+	Pop() (i T, err error)
+	Len() int
+}
 
 func (s *Stack[T]) Push(i T) {
 	s.list = append(s.list, i)
