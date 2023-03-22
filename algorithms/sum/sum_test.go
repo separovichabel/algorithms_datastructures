@@ -8,7 +8,6 @@ import (
 	"testing"
 
 	"github.com/separovichabel/algorithms_datastructures/algorithms/sum"
-	rand "github.com/separovichabel/algorithms_datastructures/observation"
 )
 
 func TestThreeNon(t *testing.T) {
@@ -28,37 +27,37 @@ func TestThreeEightInts(t *testing.T) {
 	}
 }
 
-func benchmarkThree(len int, b *testing.B) {
-	f := func() int {
-		return rand.RandPositiveNegative(100, -100)
-	}
-	input := rand.RandSlice(len, f)
-	b.ResetTimer()
+// func benchmarkThree(len int, b *testing.B) {
+// 	f := func() int {
+// 		return rand.RandPositiveNegative(100, -100)
+// 	}
+// 	input := rand.RandSlice(len, f)
+// 	b.ResetTimer()
 
-	for i := 0; i < b.N; i++ {
-		sum.Three(input)
-	}
-}
+// 	for i := 0; i < b.N; i++ {
+// 		sum.Three(input)
+// 	}
+// }
 
-func BenchmarkThree100(b *testing.B) {
-	benchmarkThree(100, b)
-}
+// func BenchmarkThree100(b *testing.B) {
+// 	benchmarkThree(100, b)
+// }
 
-func BenchmarkThree1000(b *testing.B) {
-	benchmarkThree(1000, b)
-}
+// func BenchmarkThree1000(b *testing.B) {
+// 	benchmarkThree(1000, b)
+// }
 
-func BenchmarkThree2000(b *testing.B) {
-	benchmarkThree(2000, b)
-}
+// func BenchmarkThree2000(b *testing.B) {
+// 	benchmarkThree(2000, b)
+// }
 
-func BenchmarkThree4000(b *testing.B) {
-	benchmarkThree(4000, b)
-}
+// func BenchmarkThree4000(b *testing.B) {
+// 	benchmarkThree(4000, b)
+// }
 
-func BenchmarkThree8000(b *testing.B) {
-	benchmarkThree(8000, b)
-}
+// func BenchmarkThree8000(b *testing.B) {
+// 	benchmarkThree(8000, b)
+// }
 
 func TestReadData(t *testing.T) {
 	data := readData("test_data/rand3.txt")
